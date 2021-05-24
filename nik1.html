@@ -1,0 +1,617 @@
+
+<!doctype html>
+<html lang="En">
+    <head>
+        <title> Placo.com</title>
+        <meta charset="utf-8">
+       
+        
+        
+        <meta name="google-site-verification" content="F3tVkaC36N6Cs2GV8g8687irJ52ET1tflMViTcXOJJM" />
+        <link href="/templates/gk_corporate/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/theme/ilbs/css/style_new.css">
+       <!-- <link rel="stylesheet" type="text/css" href="https://www.ilbs.in/css/common.css">-->
+        <link rel="stylesheet" type="text/css" href="https://www.ilbs.in/script/datatables/media/css/jquery.dataTables.min.css?1" />
+                    <link type="text/css" rel="stylesheet" href="https://www.ilbs.in/theme/application/css/style.css" />
+            <link type="text/css" rel="stylesheet" href="https://www.ilbs.in/theme/application/css/style1.css" />
+            <link type="text/css" rel="stylesheet" href="https://www.ilbs.in/theme/application/css/bootstrap.css" />
+            
+        <link rel="stylesheet" href="/theme/ilbs/css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" media="all" href="/theme/ilbs/css/webslidemenu_new.css" />
+        <script type="text/javascript" src="/theme/ilbs/js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="/theme/ilbs/js/webslidemenu.js"></script>
+
+        <link rel="shortcut icon" href="images/favicon.ico" />
+        <!--[if IE 6]><link href="/templates/gk_corporate/css/ie6_css.css" rel="stylesheet" type="text/css" /><![endif]-->
+        <!--[if IE 7]><link href="/templates/gk_corporate/css/ie7_css.css" rel="stylesheet" type="text/css" /><![endif]-->
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-91778328-1', 'auto');
+            ga('send', 'pageview');
+
+        </script>
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-15345443-38']);
+            _gaq.push(['_trackPageview']);
+            (function () {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+            })();
+
+        </script>
+        <script>
+            $(function () {
+                var shrinkHeader = 12;
+                $(window).scroll(function () {
+                    var scroll = getCurrentScroll();
+                    if (scroll >= shrinkHeader) {
+                        $('.main-header').addClass('fixed-header');
+                    } else {
+                        $('.main-header').removeClass('fixed-header');
+                    }
+                });
+                function getCurrentScroll() {
+                    return window.pageYOffset || document.documentElement.scrollTop;
+                }
+            });
+        </script>
+
+
+        <SCRIPT TYPE="text/javascript">
+            
+        function popup(mylink, windowname)
+            {
+                if (!window.focus)
+                    return true;
+                var href;
+                if (typeof (mylink) == 'string')
+                    href = mylink;
+                else
+                    href = mylink.href;
+                window.open(href, windowname, 'width=500,height=580,scrollbars=no,left=0,top=0');
+                return false;
+            }
+            //-->
+        </SCRIPT>
+
+        <link rel="stylesheet" type="text/css" href="https://www.ilbs.in/script/jquery_ui/jquery-ui.min.css" />
+        <link rel="stylesheet" type="text/css" href="https://www.ilbs.in/script/jquery-ui-timepicker/jquery-ui-timepicker-addon.css" />
+        <script type="text/javascript" src="https://www.ilbs.in/script/jquery/jquery.min.js"></script>
+       <!-- <script type="text/javascript" src="https://www.ilbs.in/script/cookie.js"></script>-->
+        <script type="text/javascript">
+            $(document).ready(function () {
+            });
+            $(document).on('keydown', function (e) {
+                if (e.keyCode === 27) { // ESC
+                    $('#langpopup').hide();
+                    $("#fadelogin").hide();
+                    $("body").css({"overflow": ""});
+                }
+            });
+        </script>
+        <script type="text/javascript" src="https://www.ilbs.in/script/jquery_ui/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="https://www.ilbs.in/script/jquery-ui-timepicker/jquery-ui-timepicker-addon.js"></script>
+        <script type="text/javascript" src="https://www.ilbs.in/script/validation.js"></script>
+
+        <script type="text/javascript">
+            /*$(document).ready(function(e) {
+             $(".accordintabnav li").click(function(e) {
+             $(".accordintabnav li").removeClass("active");
+             $(this).toggleClass("active");
+             });
+             });*/
+
+            $(document).ready(function (e) {
+
+                $(".accordintabnav li:first").removeClass("active");
+                $(".accordintabnav li:first").children(".accordintabheading").addClass("active");
+                $(".accordintabnav li:first").children(".accordintabcontent").css("display", "block");
+                $(".accordintabnav li").click(function (e) {
+
+                    console.log($(this).children(".accordintabheading").hasClass("active"));
+                    if ($(this).children(".accordintabheading").hasClass("active"))
+                    {
+                        //console.log('1');
+                        $(this).children(".accordintabheading").removeClass("active").next(".accordintabcontent").hide();
+                    } else
+                    {
+                        //  console.log('2');
+                        $(".accordintabheading").removeClass("active");
+                        $(this).children(".accordintabheading").addClass("active");
+                        $(".accordintabheading + .accordintabcontent").hide();
+                        $(".accordintabheading.active + .accordintabcontent").slideDown(0);
+                    }
+
+                });
+            });
+
+        </script>
+
+
+        <!--
+        <script type="text/javascript">
+            var wdth= screen.width;
+            $(document).ready(function(e) {
+               if(wdth < 993) 
+                {
+                     $(".left-pannel").before("<div class='leftmenuicon'>Click Here  <strong class='fa fa-plus'></strong></div>");
+                     console.log(1);
+                     $(".leftmenuicon").click(function(e) {
+                    $(".left-pannel").slideToggle();
+                        if($(this).children("strong").hasClass("fa-plus"))
+                        {
+                        $(this).children("strong").removeClass("fa-plus").addClass("fa-minus");
+                        }
+                        else
+                        {
+                        $(this).children("strong").removeClass("fa-minus").addClass("fa-plus"); 
+                        }
+                    });
+                }
+            });
+        </script>
+        -->
+
+        <script type="text/javascript">
+
+            var wdth = screen.width;
+
+            $(document).ready(function (e) {
+                if (wdth < 800)
+                    $(".navmobblock").css("display", "block");
+
+
+                $(".mob-search .fa").click(function (e) {
+                    $(".mob-search-panel").slideToggle();
+                });
+
+
+
+            });
+
+
+        </script>
+
+        <script type="text/javascript" src="https://www.ilbs.in/script/datatables/media/js/jquery.dataTables.min.js?1"></script>
+
+
+    </head>
+    <body>
+
+<!--    ===================caree opportunities start==============-->
+    	<!-- <div class="right-box hepatitusbx">
+            <div class="right-link"></div>
+            <div class="right-section">
+                <ul>
+                    <li style="margin-top: 10px;font-size:15px;"><a href="https://www.ilbs.in?page=internal&itemid=266"><strong>Message from Director</strong></a></li><br>
+					<li style="margin-top: 15px;font-size:15px;"><a href="https://www.ilbs.in"><strong>Message from Dean </strong></a></li><br>
+					<li style="margin-top: 20px;font-size:15px;"><a href="https://www.ilbs.in"><strong>Message from Associate Dean</strong></a></li><br>
+				</ul>
+            </div>
+        </div> -->
+
+        
+
+<!--    ===================caree opportunities over==============-->   
+
+
+        <!--<div class="left-pannel">
+            <ul>
+                <li><a href="https://www.ilbs.in/?page=internal&itemid=3"><!--<img src="images/pat-care.png" alt="Patient Care"><div class="leftpanelimg leftpanelimg1">
+                </div><!<span>Patient Care<br>
+                            Services</span>
+                            <span>Online Patient<br>
+                            Services</span></a>
+                    <div class="left-menu-content left-research">
+                        <ul>
+                            
+                                    <li><a href="https://www.ilbs.in/?page=opd_days" >OPD Days</a></li>
+                                    
+                                    <li><a href="http://reports.ilbs.in/weblab" target="_blank">Online Lab Report</a></li>
+                                    
+                                    <li><a href="https://www.ilbs.in/?page=internal&itemid=20" >Make An Appointment</a></li>
+                                    
+                                    <li><a href="https://www.ilbs.in/?page=onlinepayment_form" >Online Payment</a></li>
+                                    
+                                    <li><a href="https://www.ilbs.in/?page=findadoctor" >Find A Doctor</a></li>
+                                    
+                                    <li><a href="http://reports.ilbs.in/preregistration/default.aspx" >Pre-Registration Forms</a></li>
+                                    
+                                    <li><a href="http://reports.ilbs.in/onlinestatus/onlinebedstatus.asp" target="_blank">Today's Bed Status</a></li>
+                                    
+                                    <li><a href="https://www.ilbs.in/?page=internal&itemid=23" >Preventive Health Checkup</a></li>
+                                    
+                                    <li><a href="https://www.ilbs.in/?page=internal&itemid=24" >Our Services</a></li>
+                                    
+                                    <li><a href="https://www.ilbs.in/?page=internal&itemid=28" >EWS Category</a></li>
+                                    
+                                    <li><a href="https://www.ilbs.in/?page=internal&itemid=31" >Cashless TPAs (Corporate Only)</a></li>
+                                    
+                                    <li><a href="https://www.ilbs.in/?page=internal&itemid=495" >Li Hab</a></li>
+                                                            </ul> 
+                    </div>
+                </li>
+                <li><a href="https://www.ilbs.in/?page=internal&itemid=6"><img src="images/acadmic-ser-icon.png" alt="Patient Care"><div class="leftpanelimg leftpanelimg2"></div><span>Academics</span></a>
+                    <div class="left-menu-content" style="-moz-column-count: 3;-webkit-column-count:3;column-count:2;">
+                        <ul>
+                                                    </ul> 
+                    </div>
+                </li>
+                <li style="border-bottom:none;"><a href="https://www.ilbs.in/?page=content&depid=23&itemid=102"><!--<img src="images/research-icon.png" alt="Patient Care"><div class="leftpanelimg leftpanelimg3"></div><span>Research</span></a>
+                    <div class="left-menu-content left-research">
+                        <ul>
+                                                                <li><a href="https://www.ilbs.in/?page=content&amp;itemid=479" >Hepatic Immunology</a></li>
+                                                                        <li><a href="/?page=internal&amp;itemid=482" >CCM</a></li>
+                                                                        <li><a href="https://www.ilbs.in/?page=content&amp;itemid=524" >Hepatovesicles</a></li>
+                                                                        <li><a href="https://www.ilbs.in/?page=content&amp;itemid=525" >Bio Bank</a></li>
+                                                                        <li><a href="https://www.ilbs.in/?page=internal&itemid=44" >Hepatic Regeneration</a></li>
+                                                                        <li><a href="https://www.ilbs.in/?page=internal&itemid=45" >Hepatomics</a></li>
+                                                                        <li><a href="https://www.ilbs.in/?page=internal&itemid=46" >Acute On Chronic Liver Failure</a></li>
+                                                                        <li><a href="https://www.ilbs.in/?page=internal&itemid=47" >Hepatic Cell Biology</a></li>
+                                                                        <li><a href="https://www.ilbs.in/?page=internal&itemid=48" >Liver Multi Omics</a></li>
+                                                                        <li><a href="https://www.ilbs.in/?page=internal&itemid=49" >Hepatic Virology</a></li>
+                                                                        <li><a href="https://www.ilbs.in/?page=internal&amp;itemid=476" >Hepatic Physiology  &amp; Vascular Biology</a></li>
+                                                            </ul> 
+                    </div>
+                </li>
+            </ul>
+        </div>-->
+  <!--      <div class="right-box">
+            <div class="right-link"></div>
+            <div class="right-section">
+                <ul>
+                    <li><strong>Liver Helpline No.</strong> 1800115354</li>
+                    <li><strong>Ambulance No.</strong><br>011 4630 0000</li>
+                    <li><strong>Reception / Enquiry No.</strong><br>011-26706700-02, 46300000</li>
+                    <li><a href="">Click Here</a></li>
+                </ul>
+            </div>
+        </div>-->
+        
+        
+       <!--<div class="right-box hepatitusbx">
+            <div class="right-link"></div>
+            <div class="right-section">
+                <ul>
+                    <li style="text-align: center;margin-top: 40px;font-size:15px;"><strong>Free Hepatitis Screening on World Hepatitis Day <br/> (28th July 2018)</strong></li><br/>
+                    <li style="text-align: center;"><a href="https://www.ilbs.in/?page=screening_form">Click Here</a></li>
+                </ul>
+            </div>
+        </div>-->
+        <style>
+            .slideshow-element{
+            position: absolute;
+        }
+        #slideshow{
+            padding: 0 15px;
+            display: flex;
+            align-items: center;
+            height: 37px;
+        }
+        </style>
+        <script>
+            $("#slideshow > .slideshow-element:gt(0)").hide();
+
+            setInterval(function () {
+                $('#slideshow > .slideshow-element:first')
+                    .fadeOut(1000)
+                    .next()
+                    .fadeIn(1000)
+                    .end()
+                    .appendTo('#slideshow');
+            }, 5000);
+        </script>
+        
+                                    <!--24-03-2020-->
+                                     <div class="topmarquee" style="padding: 0px 10px;font-size: 14px;color: #241268;margin-bottom: 10px; text-decoration: none;"><span>Corona Updates</span>
+                                    <marquee onmouseover="this.stop();" onmouseout="this.start();">
+                                    <b>
+                                        <!-- <img src="images/new_image.gif" alt="" width="30" height="14"> <a target="_blank" href="images/clearification_statement-converted.pdf">Clarification Statement</a> &nbsp;&nbsp;   | -->
+                                        <img src="images/new_image.gif" alt="" width="30" height="14"> <a href="/plasma">Delhi Plasma Bank</a> &nbsp;&nbsp;   |&nbsp;&nbsp;
+                                        Telemedicine Virtual OPD Whatsapp No. 9540947085 &nbsp;&nbsp; | &nbsp;&nbsp;
+                                        COVID-19 Helpline No. 011-46300000 &nbsp;&nbsp;| &nbsp;&nbsp;
+                                        Telemedicine Virtual OPD Whatsapp No. 9540947085 &nbsp;&nbsp;
+                                        <!-- <img src="images/new_image.gif" alt="" width="30" height="14"> ILBS has started Virtual OPD for follow up patients. Send whatsapp msg on +91- 9540947999 for appointment. &nbsp;&nbsp;&nbsp;&nbsp; -->  |
+                                        &nbsp;&nbsp;&nbsp;&nbsp;<!-- <img src="images/new_image.gif" alt="" width="30" height="14"> <a href="/plasma">Delhi Plasma Bank</a> &nbsp;&nbsp;   | -->
+                                        <a href="images/Instructions to send sample for COVID 19 RT-PCR testing.pdf" target="_blank">Instructions for Collection, Storage, Packaging and Transport of Samples.</a> &nbsp;&nbsp;&nbsp;&nbsp;  |
+                                        &nbsp;&nbsp;
+                                        Telemedicine Virtual OPD Whatsapp No. 9540947085 &nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;<!-- <img src="images/new_image.gif" alt="" width="30" height="14"> <a href="/plasma">Delhi Plasma Bank</a> 
+                                          | --> <!-- <a target="_blank" href="images/list of government hospitals.pdf"> List of Government Hospitals which can send samples. </a>&nbsp;&nbsp;&nbsp;&nbsp;  | -->
+                                        &nbsp;&nbsp;&nbsp;&nbsp;<!-- <img src="images/new_image.gif" alt="" width="30" height="14"> <a href="/plasma">Delhi Plasma Bank</a>   | -->
+                                         <!-- <a target="_blank" href="images/Order_Sample collection Pvt. Hospital.pdf"> List of Private Hospitals which can send samples.</a> --></b>
+                                        </marquee>
+                                    </div>
+                                    <!--24-03-2020-->
+                                    </div>
+                                    </div>
+                                    
+                                    
+                                    <!--0-->
+                                    
+                                    </div>
+            <script>
+            $(document).ready(function () {
+
+                $('#mainMenu > li').find('span').removeClass('arrow');
+                $.each($('#mainMenu > li').find('div'), function (index, value) {
+                    $(this).siblings('a').children('span').addClass('arrow');
+                });
+                /*$.each($("#maninMenu > li:not(:has(>div))"), function (index, value) {
+                 //$(this).siblings('a').children('span').removeClass('arrow');
+                 
+                 });*/
+            });
+            </script>
+
+<div class="inner-banner main-container redbanner">
+    <div class="container">
+        <div class="col-sm-6 col-xs-12 col-md-12 banner-heading">
+            <h2>DONOR REGISTRATION FORM</h2>
+        </div>
+    </div>
+</div>
+<!--HEADER START HERE-->
+
+<div class="bodycontent">
+
+    <div class="main-container breadcrum"><div class="mid-container">
+        <!--<a href="https://www.ilbs.in">Home</a>/<span>Online Payment Form</span>-->
+            <ul>
+                <li><a href="https://www.ilbs.in" class="pathway home"><img src="images/home-arow.jpg" alt="#"></a><strong class="fa fa-arrow-right"></strong></li>
+                <!-- <li><a href="https://www.ilbs.in/?page=internal&amp;itemid=3" class="pathway">Patient Services </a> <strong class="fa fa-arrow-right"></strong></li> -->
+                <li><a href="#">Donor Registration Form</a></li>
+            </ul>
+        </div></div>
+    <div class="container bxshadow">
+        <div class="clear height30"></div>
+        <div class="formbox step1">
+            <div class="col-sm-12 col-xs-12 col-md-12" style="padding-left:0px;">
+                                                
+                <form method="post" name="donorFrom">
+                    <input type="hidden" value="e7b4c9aca45f73a09976e62c9339fd74" name="token">
+                    <div class="form clinicform">
+                       <div class="col-md-12"> <h2>Donor Registration Form</h2>
+                        <div class="clearfix height25"></div></div>
+                        <div class="clearfix height25"></div>
+
+                        <div class="col-sm-6 col-xs-12 col-md-4">
+                            <label>Did you ever get Covid?</label>
+                            <span class="starred">*</span><br />
+                            <input type="radio" value="Yes" name="isCovid"  >
+                            <span class="radiotext">Yes</span>
+                            <input type="radio" value="No" name="isCovid"  >
+                            <span class="radiotext">No</span>
+                            </div>
+                           <div class="col-sm-6 col-xs-12 col-md-4">
+                            <label>Name</label>
+                            <span class="starred">*</span><br />
+                            <input type="text" name="PatientName" class="required full-length-txt" value="" maxlength="50" placeholder="Name" data-bind="name">
+                        </div>
+                        <div class="col-sm-6 col-xs-12 col-md-4">
+                            <label>Age </label>
+                            <span class="starred">*</span><br />
+                            <input type="text" value="" name="Age" onkeypress="return isNumberKey(event)" maxlength="3" class="required full-length-txt" placeholder="Age" data-bind="number">
+                        </div>
+
+                        
+                        <div class="clearfix height25"></div>
+
+                        
+                     <!--    <div class="clearfix height25"></div> -->
+                        <div class="col-sm-4 col-xs-12 col-md-4">
+                            <label>Sex</label>
+                            <span class="starred">*</span><br />
+                            <input type="radio" value="Male" name="Gender"  >
+                            <span class="radiotext">Male</span>
+                            <input type="radio" value="Female" name="Gender"  >
+                            <span class="radiotext">Female</span>
+                            <input type="radio" value="Other" name="Gender"  >
+                            <span class="radiotext">Other</span> </div>
+
+                        <div class="col-sm-6 col-xs-12 col-md-4">
+                            <label>Email Id</label>
+                            <!-- <span class="starred">*</span><br /> -->
+                            <input type="email" name="EmailId" value=""  placeholder="Email Id"  class="full-length-txt"  data-bind="email">
+                        </div>
+
+                        <div class="col-sm-6 col-xs-12 col-md-4">
+                            <label>Mobile No.</label>
+                            <span class="starred">*</span><br />
+                            <input type="text" name="PhoneNo" id="PhoneNo" value="" maxlength="10" onkeypress="return isNumberKey(event)" placeholder="Phone No"  class="required full-length-txt"  data-bind="mobilenumber">
+                        </div>
+
+                                                
+                        <div class="clearfix height25"></div>
+                        <div class="col-sm-6 col-xs-12 col-md-4">
+                            <label>City</label>
+                            <span class="starred">*</span><br />
+                            <input type="text" name="City" class="required full-length-txt" value="" maxlength="50" placeholder="City" data-bind="name">
+                        </div>
+
+                        <div class="col-sm-6 col-xs-12 col-md-4" >
+                            <label>Address</label>
+                            <span class="starred">*</span><br />
+                            <input type="text" name="Address" class="required full-length-txt" value="" maxlength="100" placeholder="Address" data-bind="alphanumeric">
+                        </div>
+                        
+                        <div class="col-sm-6 col-xs-12 col-md-4">
+						<label>Blood Group </label><span class="starred">*</span><br />
+						<select  style="height: 41px; width: 50%;" required name="blood_group" id="blood_group" required>
+                        
+                          
+
+                        <option value="">Select</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                              <option value="B+">B-</option>
+                                 <option value="O+">O+</option>
+                              <option value="O-">O-</option>
+                               <option value="AB+">AB+</option>
+                              <option value="AB-">AB-</option>
+                              <option value="Dont Know">Don't Know</option>
+
+                        
+                        
+                    </select>
+			
+					</div>
+
+                    <!-- <div class="col-sm-4 col-xs-12 col-md-4">
+                            <label>Do you have Diabetes?</label>
+                            <span class="starred">*</span><br />
+                            <input type="radio" value="Yes" name="isDiabetes"  >
+                            <span class="radiotext">Yes</span>
+                            <input type="radio" value="No" name="isDiabetes"  >
+                            <span class="radiotext">No</span>
+                            </div>
+                       -->
+                       
+                     
+                        <div class="clearfix height25"></div>
+
+                        <!-- <div class="col-sm-4 col-xs-12 col-md-4">
+                            <label>Do you have more than 14 drinks per week?</label>
+                            <span class="starred">*</span><br />
+                            <input type="radio" value="Yes" name="14Drinks"  >
+                            <span class="radiotext">Yes</span>
+                            <input type="radio" value="No" name="14Drinks"  >
+                            <span class="radiotext">No</span>
+                            </div>
+
+                            <div class="col-sm-4 col-xs-12 col-md-4">
+                            <label>Do you have any Liver disease?</label>
+                            <span class="starred">*</span><br />
+                            <input type="radio" value="Yes" name="isLiverDisease"  >
+                            <span class="radiotext">Yes</span>
+                            <input type="radio" value="No" name="isLiverDisease"  >
+                            <span class="radiotext">No</span>
+                            </div>  
+
+                            <div class="col-sm-4 col-xs-12 col-md-4">
+                            <label>Do you have any Kidney disease?</label>
+                            <span class="starred">*</span><br />
+                            <input type="radio" value="Yes" name="isKidneyDisease"  >
+                            <span class="radiotext">Yes</span>
+                            <input type="radio" value="No" name="isKidneyDisease"  >
+                            <span class="radiotext">No</span>
+                            </div>  
+                        <div class="clearfix height25"></div>
+
+
+                        <div class="col-sm-4 col-xs-12 col-md-4">
+                            <label>Do you have any Lung disease?</label>
+                            <span class="starred">*</span><br />
+                            <input type="radio" value="Yes" name="isLungDisease"  >
+                            <span class="radiotext">Yes</span>
+                            <input type="radio" value="No" name="isLungDisease"  >
+                            <span class="radiotext">No</span>
+                            </div>
+
+                            <div class="col-sm-4 col-xs-12 col-md-4">
+                            <label>Do you have high blood pressure?</label>
+                            <span class="starred">*</span><br />
+                            <input type="radio" value="Yes" name="isBloodPressure"  >
+                            <span class="radiotext">Yes</span>
+                            <input type="radio" value="No" name="isBloodPressure"  >
+                            <span class="radiotext">No</span>
+                            </div>  
+
+                            <div class="col-sm-4 col-xs-12 col-md-4">
+                            <label>Do you have an Aadhar Card?</label>
+                            <span class="starred">*</span><br />
+                            <input type="radio" value="Yes" name="isAadhar"  >
+                            <span class="radiotext">Yes</span>
+                            <input type="radio" value="No" name="isAadhar"  >
+                            <span class="radiotext">No</span>
+                            </div>  
+                            <div class="clearfix height25"></div> -->
+                        
+                        <div class="col-sm-6 col-xs-12 col-md-4">
+						<label>Date of screening</label><span class="starred">*</span><br />
+						<input type="text" readonly name="recoveryDate" value="" maxlength="30" id="recoveryDate" placeholder="From" class="datepicker full-length-txt required" />
+			
+					</div>  
+
+                    <!-- <div class="col-sm-4 col-xs-12 col-md-4">
+                            <label>Do you have a discharge report from the hospital?</label>
+                            <span class="starred">*</span><br />
+                            <input type="radio" value="Yes" name="isDischarge"  >
+                            <span class="radiotext">Yes</span>
+                            <input type="radio" value="No" name="isDischarge"  >
+                            <span class="radiotext">Not yet</span>
+                            </div>   -->
+
+                          
+        
+                        <!--<div class="col-sm-6 col-xs-12 col-md-4">
+						<label>Department Name </label><span class="">*</span><br />
+						<select  required name="dept_name" id="dept_name" required onchange="getDoctorName(this.value)">
+                        
+                            <option value=""></option>
+
+                                                
+                    </select>
+			
+					</div>-->
+
+                    <!--<div class="col-sm-6 col-xs-12 col-md-4">
+						<label>Doctor Name </label><span class="">*</span><br />
+						<select name="doc_name" id="doc_name" required>
+                        <option value="0">-----Select Doctors-----</option>
+                        
+                    </select>
+			
+					</div>-->
+                    
+                        
+                        <!-- <div class="clearfix height25"></div> -->
+                        <div class="col-sm-6 col-xs-12 col-md-6" style="padding-left:15px;" >
+                            <label>Captcha Code</label>
+                            <br />
+                            <img src="https://www.ilbs.in/captcha.php" alt="#" id="captcha" style="float:left; margin-right:10px;" />
+                            <img src="https://www.ilbs.in/images/refresh-bt.png" alt="#" style="float:left; margin-right:10px;cursor:pointer" id="reload"><input type="text" class="full-length-txt required" name="captchaCode" placeholder="Type code here.." style="width:215px;" />
+                        </div>
+                        <div class="clearfix height25"></div>
+                        <div class="col-sm-12 text-center clear">
+                            <label>&nbsp;</label>
+                            <br />
+                            <input type="submit" name="form_submit" id="submit" class="btnred" value="Submit" style="padding-top:7px; padding-bottom:7px;">
+                            <form name=myform>
+                              
+                                
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!--          ===================form over step1 over ======================-->
+
+            <div class="clearfix"></div>
+        </div>
+        <!--          ===================form box over======================--> 
+
+    </div>
+</div>
+
+
+</body>
+</html><!--https://www.ilbs.in-->
